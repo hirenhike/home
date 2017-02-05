@@ -1,2 +1,2 @@
 # home
-We are here for to provide solution to all the problems of Trek lovers....!!!
+We are here to provide solution to all the problems of Trek lovers....!!!
