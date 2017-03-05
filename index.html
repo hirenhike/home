@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
+	#dvMap { width: 500px; height: 400px; }
 	.carousel-inner > .item > img,
 	  .carousel-inner > .item > a > img {
 	      width: 70%;
@@ -1023,7 +1024,7 @@
          center: myLatlng,
          mapTypeId: google.maps.MapTypeId.ROADMAP
          }
-      map = new google.maps.Map($('#map'), myOptions);
+      map = new google.maps.Map($('#dvMap'), myOptions);
       var marker = new google.maps.Marker({
           position: myLatlng, 
           map: map,
