@@ -1015,23 +1015,21 @@
     
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyAQF1NafhrCePsytuKIRq8PA_RF2QHtRQY&sensor=false"></script>
-    <script type="text/javascript">
-        window.onload = function () {
-            var mapOptions = {
-                center: new google.maps.LatLng(12.336255, 76.613674),
-                zoom: 14,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var infoWindow = new google.maps.InfoWindow();
-            var latlngbounds = new google.maps.LatLngBounds();
-            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
-            google.maps.event.addListener(map, 'click', function (e) {
-                var latlng = new google.maps.LatLng(e.latLng.lat(), e.latLng.lng());
-                var geocoder = geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-                });
-            });
-        }
+     <script>
+    $(document).ready(function (){
+         var myLatlng = new google.maps.LatLng(12.336255, 76.613674);
+         var myOptions = {
+             zoom: 4,
+             center: myLatlng,
+             mapTypeId: google.maps.MapTypeId.ROADMAP
+             }
+          map = new google.maps.Map($('#dvMap'), myOptions);
+          var marker = new google.maps.Marker({
+              position: myLatlng, 
+              map: map,
+          title:"4th Cross Rd, Manchegowdana koppalu, Vijay Nagar 2nd Stage, Vijayanagar, Mysuru, Karnataka 570017, India"
+         });
+    }) 
     </script>
 
 </body>
