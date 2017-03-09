@@ -18,7 +18,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('.navbar-collapse.in li').click(function(){
+			$('.navbar-collapse li').click(function(){
 				$('.navbar-collapse').removeClass('in');
 				var $target = $(this).find('a').attr("href");
 				if($(window).width()<=767){
