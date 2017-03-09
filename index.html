@@ -21,7 +21,7 @@
 			$('.navbar-collapse li').click(function(){
 				$('.navbar-collapse').removeClass('in');
 				var $target = $(this).find('a').attr("href");
-				var coord = $($target).offset().top + 80;
+				var coord = $($target).offset().top - 80;
 				$("html, body").animate({scrollTop: coord}, 300);
 			});
 		});
