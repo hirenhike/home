@@ -20,6 +20,9 @@
 			$('.navbar-collapse li').click(function(){
 			$('.navbar-collapse').removeClass('in');
 			});
+			var $target = $(this).attr("href");
+			var coord = $($target).offset().top - 80;
+			$("html, body").animate({scrollTop: coord}, 300);
 		});
 	</script>
 <style>
@@ -195,9 +198,6 @@
 	@media screen and (max-width: 767px) {
 		.navbar-custom .navbar-nav {
 		    margin-top: 6px;
-		}
-		section {
-		    padding: 75px 0;
 		}
 		.navbar-collapse.collapsing {
 		    border: none;
