@@ -1122,7 +1122,7 @@
 			$('.navbar-collapse li').click(function(){
 				$('.navbar-collapse').removeClass('in');
 			});
-			$('.navbar-collapse li,about-us').click(function(){
+			$('.navbar-collapse li,.about-us').click(function(){
 				var $target = $(this).find('a').attr("href");
 				if($(window).width()>=1024){
 					var coord = $($target).offset().top - 130;
