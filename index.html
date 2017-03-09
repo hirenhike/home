@@ -660,7 +660,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>About HIREnHIKE</h3>
-                        <p>We are here to provide you a comfortable and hassle-free trekking experience. <a href="#about">Click here</a> to know more about us.</p>
+                        <p class="about-us">We are here to provide you a comfortable and hassle-free trekking experience. <a href="#about">Click here</a> to know more about us.</p>
                     </div>
                 </div>
             </div>
@@ -1121,6 +1121,8 @@
 		$(document).ready(function(){
 			$('.navbar-collapse li').click(function(){
 				$('.navbar-collapse').removeClass('in');
+			});
+			$('.navbar-collapse li,about-us').click(function(){
 				var $target = $(this).find('a').attr("href");
 				if($(window).width()>=1024){
 					var coord = $($target).offset().top - 130;
