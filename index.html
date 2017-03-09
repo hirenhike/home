@@ -15,25 +15,7 @@
     <link href="freelancer.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('.navbar-collapse li').click(function(){
-				$('.navbar-collapse').removeClass('in');
-				var $target = $(this).find('a').attr("href");
-				if($(window).width()>=1024){
-					var coord = $($target).offset().top - 130;
-				}
-				if($(window).width()<=959){
-					var coord = $($target).offset().top - 80;
-				}
-				if($(window).width()<=480){
-					var coord = $($target).offset().top - 40;
-				}
-				$("html, body").animate({scrollTop: coord}, 300);
-			});
-		});
-	</script>
+	
 <style>
 	.modal-open{padding-right:0px}
 	.portfolio-item p a {color: #333333;}
@@ -1117,25 +1099,42 @@
     <!-- Bootstrap Core JavaScript -->
     
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyAQF1NafhrCePsytuKIRq8PA_RF2QHtRQY&sensor=false"></script>
+	<script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyAQF1NafhrCePsytuKIRq8PA_RF2QHtRQY&&callback=initMap"></script>
      <script>
-     window.onload = function () {
-            var mapOptions = {
-                center: new google.maps.LatLng(12.336255, 76.613674),
-                zoom: 14,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var infoWindow = new google.maps.InfoWindow();
-            var latlngbounds = new google.maps.LatLngBounds();
-            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
-            google.maps.event.addListener(map, 'click', function (e) {
-                var latlng = new google.maps.LatLng(e.latLng.lat(), e.latLng.lng());
-                var geocoder = geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-                });
-            });
-        }
+
+      function initMap() {
+        var myLatLng = {lat: 12.336255, lng: 76.613674};
+
+        var map = new google.maps.Map(document.getElementById('dvMap'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'HirenHike.com'
+        });
+      }
     </script>
+	<script>
+		$(document).ready(function(){
+			$('.navbar-collapse li').click(function(){
+				$('.navbar-collapse').removeClass('in');
+				var $target = $(this).find('a').attr("href");
+				if($(window).width()>=1024){
+					var coord = $($target).offset().top - 130;
+				}
+				if($(window).width()<=959){
+					var coord = $($target).offset().top - 80;
+				}
+				if($(window).width()<=480){
+					var coord = $($target).offset().top - 40;
+				}
+				$("html, body").animate({scrollTop: coord}, 300);
+			});
+		});
+	</script>
 
 </body>
 
