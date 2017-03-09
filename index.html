@@ -21,7 +21,10 @@
 			$('.navbar-collapse li').click(function(){
 				$('.navbar-collapse').removeClass('in');
 				var $target = $(this).find('a').attr("href");
-				if($(window).width()<=767){
+				if($(window).width()>=1024){
+					var coord = $($target).offset().top - 135;
+				}
+				if($(window).width()<=959){
 					var coord = $($target).offset().top - 80;
 				}
 				if($(window).width()<=480){
